@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MealDB API Integration</title>
+    <script src="script.js"></script>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="topnav">
+      <div class="horizontal-forms">
+        <!-- search with dropdown based on area -->
+        <form id="search-form" class="vertical-form" onclick="searchOnArea()">
+          <!-- <label class="textboxlabel" for="area">Choose a area:</label> -->
+          <select class="dropdownoption" name="area" id="area">
+            <option value="value" selected>Select a area</option>
+
+            <!-- dropdown result based on this api https://www.themealdb.com/api/json/v1/1/list.php?a=list -->
+            <option value="Indian">Indian</option>
+            <option value="American">American</option>
+            <option value="British">British</option>
+            <option value="Canadian">Canadian</option>
+            <option value="Chinese">Chinese</option>
+
+            <option value="Croatian">Croatian</option>
+            <option value="Dutch">Dutch</option>
+            <option value="Egyptian">Egyptian</option>
+            <option value="Filipino">Filipino</option>
+            <option value="French">French</option>
+            <option value="Greek">Greek</option>
+            <option value="Irish">Irish</option>
+            <option value="Italian">Italian</option>
+            <option value="Italian">Italian</option>
+
+            <option value="Jamaican">Jamaican</option>
+            <option value="Japanese">Japanese</option>
+            <option value="Malaysian">Malaysian</option>
+            <option value="Mexican">Mexican</option>
+            <option value="Moroccan">Moroccan</option>
+            <option value="Polish">Polish</option>
+            <option value="Portuguese">Portuguese</option>
+            <option value="Russian">Russian</option>
+            <option value="Spanish">Spanish</option>
+
+            <option value="Thai">Thai</option>
+            <option value="Tunisian">Tunisian</option>
+            <option value="Turkish">Turkish</option>
+            <option value="Unknown">Unknown</option>
+            <option value="Vietnamese">Vietnamese</option>
+          </select>
+
+          <!-- auto trigger implemented so commented a button -->
+          <!-- <input type="submit" value="Submit" onclick="searchonarea()"> -->
+        </form>
+
+        <!-- search with dropdown based on catagory -->
+
+        <form
+          id="search-form"
+          class="vertical-form"
+          onclick="searchOncatagory()"
+        >
+          <!-- <label class="textboxlabel" for="catagory">Choose a catagory:</label> -->
+          <select class="dropdownoption" name="catagory" id="catagory">
+            <!-- dropdown result based on this api https://www.themealdb.com/api/json/v1/1/categories.php -->
+            <option value="value" selected>Select a catagory</option>
+
+            <option value="Beef">Beef</option>
+            <option value="Chicken">Chicken</option>
+            <option value="Dessert">Dessert</option>
+            <option value="Lamb">Lamb</option>
+            <option value="Miscellaneous">Miscellaneous</option>
+
+            <option value="Pasta">Pasta</option>
+            <option value="Pork">Pork</option>
+            <option value="Seafood">Seafood</option>
+            <option value="Side">Side</option>
+            <option value="Starter">Starter</option>
+            <option value="Vegan">Vegan</option>
+            <option value="Vegetarian">Vegetarian</option>
+            <option value="Breakfast">Breakfast</option>
+            <option value="Goat">Goat</option>
+          </select>
+
+          <!-- auto trigger implemented so commented a button -->
+          <!-- <input type="submit" value="Submit" onclick="searchOncatagory()"> -->
+        </form>
+
+        <!-- 3rd div -->
+        <div class="login-container">
+          <form id="search-form" class="vertical-form">
+            <label class="textboxlabel" for="searchInput">Enter a letter:</label>
+            <input type="text" class="textbox" id="searchInput" required />
+            <button class="glow-on-hover" type="button" onclick="searchMeals()">
+              Search
+            </button>
+          </form>
+        </div>
+      </div>
+      
+    </div>
+
+
+    <video autoplay muted loop id="myVideo">
+      <source src="bgvideo.mp4" type="video/mp4" />
+      Your browser does not support HTML5 video.
+    </video>
+
+    <!-- <form id="searchForm">
+        <label for="searchInput">Enter a letter:</label>
+        <input type="text" id="searchInput" required>
+        <button type="button" onclick="searchMeals()">Search</button>
+    </form> -->
+
+    <!-- search meal with letter -->
+
+    <!-- above created a autom trigger dropdown box -->
+    <!-- Search meal with area -->
+    <!-- <form id="search-form">
+        <label for="searchInput">Enter a area:</label>
+        <input type="area" id="area" required>
+        <button type="button" onclick="searchOnArea()">Search</button>
+    </form> -->
+
+    <!-- above created a autom trigger dropdown box -->
+
+    <!-- Search meal with area -->
+    <!-- <form id="search-form">
+      <label for="searchInput">Enter a catagory:</label>
+      <input type="catagory" id="catagory" required>
+      <button type="button" onclick="searchOncatagory()">Search</button>
+  </form> -->
+
+    <!-- api binded dropdown box fetch data automatically -->
+    <!-- <form id="categoryForm" onsubmit="searchOncatagory(); return false;">
+    <label for="categories">Select a category:</label>
+    <select id="categories"></select>
+    <button type="submit">Search</button>
+  </form> -->
+
+    <div id="mealDetails"></div>
+
+    <div id="div2" style="color: aliceblue;">
+      <h2>Use above inputs to search meals based on area and first letter and also with area</h2>
+  </div>
+    <!-- error to override data -->
+    <!-- <div id="mealDetailsonarea"></div> -->
+  </body>
+  
+</html>
